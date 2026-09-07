@@ -25,6 +25,7 @@ def predict():
         return jsonify({"error": str(e)}), 400
 
 
+# Vercel importa la variable "app" directamente como handler WSGI.
+# Este bloque solo se usa cuando corres el archivo en local (python app.py).
 if __name__ == '__main__':
-    # Escuchar en todas las interfaces para que Docker pueda redirigir el tráfico
     app.run(host='0.0.0.0', port=5000)
